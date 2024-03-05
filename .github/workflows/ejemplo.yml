@@ -13,7 +13,3 @@ jobs:
         run: npm install
       - name: Test
         run: npm run serenity
-        if: failure()
-        with:
-          name: logs
-          path: logs
