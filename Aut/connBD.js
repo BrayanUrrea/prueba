@@ -1,27 +1,30 @@
-const { MongoClient } = require("mongodb");
-
-// Replace the uri string with your connection string.
-const uri ="mongodb+srv://mongo-1234:zEj6QmoxzvEFQmgv@cluster0.otxrshk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
-
-const client = new MongoClient(uri);
+const mongoose = require('mongoose');
+const { Schema } = mongoose;
+require('dotenv').config()
 
 
-async function run() {
-  try {
-    await client.connect();
+mongoose.connect(process.env.MONGODB_URI, {
 
-    const database = client.db('registros');
-    const usuarios = database.collection('usuarios');
+})
+    .then(() => console.log('CONECTADO A MONGODB'))
+    .catch((e) => console.log('ERROR' + e))
 
-    // Query for a movie that has the title 'Back to the Future'
-    const query = {};
-    console.log( await usuarios.findOne(query));
-    
-  } finally {
-    // Ensures that the client will close when you finish/error
-    await client.close();
-  }
+
+const user = new Schema({
+    user: String,
+    password: String
+});
+
+
+const usuarios = mongoose.model('usuarios', user);
+
+
+const mostrar = async () => {
+    const personas = await usuarios.find()
+    return personas;
 }
-run().catch(console.dir);
+
+
+module.exports = mostrar;
 
 
