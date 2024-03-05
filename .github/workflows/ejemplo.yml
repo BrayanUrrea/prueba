@@ -1,55 +1,8 @@
-name: $(Build.SourceBranchName).$(date:yyyyMMdd)$(rev:.r)
-
-variables:
-  - name: 'working.directory'
-    value: 'prueba/features/todo-list'
-
-trigger:
-  branches:
-    include:
-      - trunk
-      - feature/*
+name: prueba
+on: push
 jobs:
-  - job: 'BuildJob'
-    displayName: 'Build'
-    pool:
-      name: Nequi Quality Control
-      demands:
-        - java
-
-    steps:
-      - task: SonarCloudPrepare@1
-        inputs:
-          SonarCloud: 'SonarCloud'
-          organization: 'nequi'
-          scannerMode: 'Other'
-          extraProperties: |
-            sonar.source='.'
-            sonar.projectKey=GrupoBancolombia_$(Build.Repository.Name)
-            sonar.projectName=$(Build.Repository.Name)
-
-      - task: Gradle@3
-        inputs:
-          gradleWrapperFile: $(working.directory)/gradlew
-          workingDirectory: $(working.directory)
-          tasks: 'build -x test --info'
-          publishJUnitResults: false
-          sonarQubeRunAnalysis: true
-          sqGradlePluginVersionChoice: 'specify'
-          sonarQubeGradlePluginVersion: '3.0'
-
-      - task: SonarCloudPublish@1
-        inputs:
-          pollingTimeoutSec: '300'
-
-      - task: sonarcloud-buildbreaker@2
-        inputs:
-          SonarCloud: 'SonarCloud'
-          organization: 'nequi'
-
-      - task: PublishBuildArtifacts@1
-        displayName: 'Publicar -> Adicionar artefacto al pipeline'
-        inputs:
-          PathtoPublish: $(working.directory)
-          ArtifactName: 'COR0028_customer_Test'
-        condition: eq(variables['Build.SourceBranch'], 'refs/heads/trunk')
+   my-jobs:
+     runs-on: windows-latest
+     steps:
+      - name: Clean global cache
+        run: npm init
