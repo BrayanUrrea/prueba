@@ -26,5 +26,5 @@ jobs:
           java-version: '17'
       - name: Setup Node Modules
         uses: bahmutov/npm-install@v1
-      - run: npm install webdriver-manager
+      - run: npm install
       - run: npm run serenity
