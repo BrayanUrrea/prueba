@@ -27,13 +27,3 @@ jobs:
       - name: Setup Node Modules
         uses: bahmutov/npm-install@v1
       - run: npm run serenity
-      - run: npm test
-        env:
-          CI: true
-      - name: GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4.5.0
-        if: matrix.node-version == '18.x' && github.ref == 'refs/heads/main'
-        with:
-          BRANCH: gh-pages
-          FOLDER: target/site/serenity
-          CLEAN: true

@@ -155,7 +155,7 @@
             <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
         </li>
     </ul>
-    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 04-03-2024 22:31</span>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 05-03-2024 05:01</span>
     <br style="clear:left"/>
 </div>
 
@@ -225,9 +225,9 @@
                 <table class="outcome-header">
                     <tr>
                         <td colspan="2" class="test-title-bar">
-                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-exclamation-triangle-fill error-icon fa-2x' title='ERROR'></i></a></span>
                             <span class="test-case-title">
-                                <span class="success-color">Marking items as not completed
+                                <span class="error-color">Marking items as not completed
                                     <span class="related-issue-title"></span>
                                 </span>
                             </span>
@@ -244,47 +244,59 @@
 
     <div id="beforetable"></div>
     <div id="contenttilttle">
+            <div class="screenshotFailure panel panel-danger">
+    <div style="display:block">
+        <div class="table">
+            <div class="row">
+                <div class="col-sm-10" style="padding-left:1.5em; padding-top:0.5em; padding-bottom:0.5em;">
+                    <span class="error-message error-message-title">Error: function timed out, ensure the promise resolves within 5000 milliseconds</span>
+                </div>
+                <div class="col-sm-2">
+                    <a class="btn btn-warning details-button" data-toggle="collapse" href="#stacktraceModal-overall"
+                       role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><i class="bi bi-eye"></i> More details</a>
+                </div>
+             </div>
+        </div>
+    <div>
+
+    <!-- Details Section -->
+    <div class="row stacktrace-details">
+      <div class="col">
+        <div class="collapse multi-collapse" id="stacktraceModal-overall">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Error </h4>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <pre>.Timeout.<anonymous>()(C:\Users\Usr\Desktop\actions\prueba\node_modules\@cucumber\cucumber\lib\time.js:54)<br />.listOnTimeout()(node:internal/timers:573)<br />.process.processTimers()(node:internal/timers:514)<br /></pre>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+            </div>
         <div class="slider-wrapper theme-default">
             <div id="slider">
-                <img src="photo-windows-chrome-121.0.6167.185-alice-navigates-to-https-todo-a-c61579caa0.png" title=" Given Alice started with a list containing:
+                <img src="photo-windows-chrome-121.0.6167.185-alice-navigates-to-https-todo-a-fb722e3892.png" title=" Given Alice started with a list containing:
 | Buy dog food |
 | Feed the dog |" width="0"/>
-                <img src="photo-windows-chrome-121.0.6167.185-alice-navigates-to-https-todo-a-c61579caa0.png" title=" Alice starts with a list containing 2 items" width="0"/>
-                <img src="photo-windows-chrome-121.0.6167.185-alice-navigates-to-https-todo-a-c61579caa0.png" title=" Alice creates an empty todo list" width="0"/>
-                <img src="photo-windows-chrome-121.0.6167.185-alice-navigates-to-https-todo-a-c61579caa0.png" title=" Alice navigates to 'https://todo-app.serenity-js.org/'" width="0"/>
-                <img src="photo-windows-chrome-121.0.6167.185-alice-presses-key-enter-in-what-n-c61579caa0.png" title=" Alice presses key Enter in &quot;What needs to be done?&quot; input box" width="0"/>
-                <img src="photo-windows-chrome-121.0.6167.185-alice-ensures-that-website-title-d-c61579caa0.png" title=" Alice ensures that website title does equal 'Serenity/JS TodoApp'" width="0"/>
-                <img src="photo-windows-chrome-121.0.6167.185-alice-waits-until-what-needs-to-b-b170667d7c.png" title=" Alice waits until &quot;What needs to be done?&quot; input box does become visible" width="0"/>
-                <img src="photo-windows-chrome-121.0.6167.185-alice-executes-a-synchronous-scrip-c61579caa0.png" title=" Alice empties local storage if needed" width="0"/>
-                <img src="photo-windows-chrome-121.0.6167.185-alice-executes-a-synchronous-scrip-c61579caa0.png" title=" Alice checks whether &lt;&lt;persisted items&gt;&gt;.length does have value greater than 0" width="0"/>
-                <img src="photo-windows-chrome-121.0.6167.185-alice-executes-a-synchronous-scrip-c61579caa0.png" title=" Alice empties local storage" width="0"/>
-                <img src="photo-windows-chrome-121.0.6167.185-alice-executes-a-synchronous-scrip-c61579caa0.png" title=" Alice executes a synchronous script" width="0"/>
-                <img src="photo-windows-chrome-121.0.6167.185-current-page-.reload-fb722e3892.png" title=" &lt;&lt;current page&gt;&gt;.reload()" width="0"/>
+                <img src="photo-windows-chrome-121.0.6167.185-alice-navigates-to-https-todo-a-fb722e3892.png" title=" Alice starts with a list containing 2 items" width="0"/>
+                <img src="photo-windows-chrome-121.0.6167.185-alice-navigates-to-https-todo-a-fb722e3892.png" title=" Alice creates an empty todo list" width="0"/>
+                <img src="photo-windows-chrome-121.0.6167.185-alice-navigates-to-https-todo-a-fb722e3892.png" title=" Alice navigates to 'https://todo-app.serenity-js.org/'" width="0"/>
+                <img src="photo-windows-chrome-121.0.6167.185-alice-ensures-that-website-title-d-b3d980a726.png" title=" Alice ensures that website title does equal 'Serenity/JS TodoApp'" width="0"/>
                 <img src="photo-windows-chrome-121.0.6167.185-alice-enters-buy-dog-food-into-b3d980a726.png" title=" Alice records an item called 'Buy dog food'" width="0"/>
                 <img src="photo-windows-chrome-121.0.6167.185-alice-enters-buy-dog-food-into-b3d980a726.png" title=" Alice enters 'Buy dog food' into &quot;What needs to be done?&quot; input box" width="0"/>
+                <img src="photo-windows-chrome-121.0.6167.185-alice-presses-key-enter-in-what-n-0142ea0468.png" title=" Alice waits until &quot;What needs to be done?&quot; input box does become visible" width="0"/>
                 <img src="photo-windows-chrome-121.0.6167.185-alice-presses-key-enter-in-what-n-0142ea0468.png" title=" Alice presses key Enter in &quot;What needs to be done?&quot; input box" width="0"/>
+                <img src="photo-windows-chrome-121.0.6167.185-alice-waits-until-what-needs-to-b-e35adbabb0.png" title=" Alice waits until &quot;What needs to be done?&quot; input box does become visible (completed)" width="0"/>
+                <img src="photo-windows-chrome-121.0.6167.185-alice-waits-until-the-text-of-disp-0142ea0468.png" title=" Alice empties local storage if needed" width="0"/>
+                <img src="photo-windows-chrome-121.0.6167.185-alice-waits-until-the-text-of-disp-0142ea0468.png" title=" Alice checks whether &lt;&lt;persisted items&gt;&gt;.length does have value greater than 0" width="0"/>
                 <img src="photo-windows-chrome-121.0.6167.185-alice-waits-until-the-text-of-disp-0142ea0468.png" title=" Alice waits until the text of displayed items does contain 'Buy dog food'" width="0"/>
-                <img src="photo-windows-chrome-121.0.6167.185-alice-enters-feed-the-dog-into-154eceb3c8.png" title=" Alice records an item called 'Feed the dog'" width="0"/>
-                <img src="photo-windows-chrome-121.0.6167.185-alice-enters-feed-the-dog-into-154eceb3c8.png" title=" Alice enters 'Feed the dog' into &quot;What needs to be done?&quot; input box" width="0"/>
-                <img src="photo-windows-chrome-121.0.6167.185-alice-presses-key-enter-in-what-n-b170667d7c.png" title=" Alice presses key Enter in &quot;What needs to be done?&quot; input box" width="0"/>
-                <img src="photo-windows-chrome-121.0.6167.185-alice-waits-until-the-text-of-disp-b170667d7c.png" title=" Alice waits until the text of displayed items does contain 'Feed the dog'" width="0"/>
-                <img src="photo-windows-chrome-121.0.6167.185-alice-clicks-on-toggle-button-of-a-367991697c.png" title=" And she marked the following items as completed:
-| Buy dog food |" width="0"/>
-                <img src="photo-windows-chrome-121.0.6167.185-alice-clicks-on-toggle-button-of-a-367991697c.png" title=" Alice marks the following items as completed: [ 'Buy dog food' ]" width="0"/>
-                <img src="photo-windows-chrome-121.0.6167.185-alice-clicks-on-toggle-button-of-a-367991697c.png" title=" Alice marks an item called 'Buy dog food' as completed" width="0"/>
-                <img src="photo-windows-chrome-121.0.6167.185-alice-clicks-on-toggle-button-of-a-367991697c.png" title=" Alice checks whether CSS classes of an item called 'Buy dog food' does not contain 'completed'" width="0"/>
-                <img src="photo-windows-chrome-121.0.6167.185-alice-clicks-on-toggle-button-of-a-367991697c.png" title=" Alice toggles the completion status of an item called 'Buy dog food'" width="0"/>
-                <img src="photo-windows-chrome-121.0.6167.185-alice-clicks-on-toggle-button-of-a-367991697c.png" title=" Alice clicks on toggle button of an item called 'Buy dog food'" width="0"/>
-                <img src="photo-windows-chrome-121.0.6167.185-alice-clicks-on-toggle-button-of-a-2a6eb4c2a7.png" title=" When she marks the following items as outstanding:
-| Buy dog food |" width="0"/>
-                <img src="photo-windows-chrome-121.0.6167.185-alice-clicks-on-toggle-button-of-a-2a6eb4c2a7.png" title=" Alice marks the following items as outstanding: [ 'Buy dog food' ]" width="0"/>
-                <img src="photo-windows-chrome-121.0.6167.185-alice-clicks-on-toggle-button-of-a-2a6eb4c2a7.png" title=" Alice marks an item called 'Buy dog food' as outstanding" width="0"/>
-                <img src="photo-windows-chrome-121.0.6167.185-alice-clicks-on-toggle-button-of-a-2a6eb4c2a7.png" title=" Alice checks whether CSS classes of an item called 'Buy dog food' does contain 'completed'" width="0"/>
-                <img src="photo-windows-chrome-121.0.6167.185-alice-clicks-on-toggle-button-of-a-2a6eb4c2a7.png" title=" Alice toggles the completion status of an item called 'Buy dog food'" width="0"/>
-                <img src="photo-windows-chrome-121.0.6167.185-alice-clicks-on-toggle-button-of-a-2a6eb4c2a7.png" title=" Alice clicks on toggle button of an item called 'Buy dog food'" width="0"/>
-                <img src="photo-windows-chrome-121.0.6167.185-alice-ensures-that-number-of-items-2a6eb4c2a7.png" title=" Then she should see that she has 2 items outstanding" width="0"/>
+                <img src="photo-windows-chrome-121.0.6167.185-alice-executes-a-synchronous-scrip-e35adbabb0.png" title=" Alice empties local storage" width="0"/>
 
-                <img src="photo-windows-chrome-121.0.6167.185-alice-ensures-that-number-of-items-2a6eb4c2a7.png" title=" Alice ensures that number of items left does equal 2: <span class='success-color'>SUCCESS</span>" width="0"/>
+                <img src="photo-windows-chrome-121.0.6167.185-alice-executes-a-synchronous-scrip-e35adbabb0.png" title=" Alice executes a synchronous script: <span class='error-color'>ERROR</span>" width="0"/>
             </div>
         </div>
 
