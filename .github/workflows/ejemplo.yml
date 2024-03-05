@@ -1,15 +1,46 @@
-name: CI
-on: [push, pull_request]
+name: build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+    types: [ opened, synchronize ]
+
 jobs:
   build:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ ubuntu-latest, windows-latest ]
+        node-version: [ 18.x, 20.x ]
+
+    runs-on: ${{ matrix.os }}
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
         with:
-          node-version: 18
-      - name: Install
-        run: npm install
-      - name: Test
-        run: npm run serenity
+          node-version: ${{ matrix.node-version }}
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+      - name: Install Node Modules
+        uses: bahmutov/npm-install@v1
+        with:
+          install-command: npm ci
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+      - run: npm run lint
+      - run: npm test
+        env:
+          CI: true
+
+      - name: GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4.5.0
+        if: matrix.os == 'ubuntu-latest' && matrix.node-version == '18.x' && github.ref == 'refs/heads/main'
+        with:
+          BRANCH: gh-pages
+          FOLDER: target/site/serenity
+          CLEAN: true
