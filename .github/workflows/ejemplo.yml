@@ -1,0 +1,9 @@
+name: prueba
+on: push
+jobs:
+   my-jobs:
+     runs-on: windows-latest
+     steps:
+        name: my-step
+         - run: npm install
+         - run: npm run serenity
