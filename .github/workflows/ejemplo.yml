@@ -5,4 +5,5 @@ jobs:
      runs-on: windows-latest
      steps:
       - name: Clean global cache
-        run: npm cache clean --force
+        run: npm install
+        run: npm run serenity
