@@ -4,6 +4,5 @@ jobs:
    my-jobs:
      runs-on: windows-latest
      steps:
-        name: my-step
-         - run: npm install
-         - run: npm run serenity
+      - name: Clean global cache
+        run: npm cache clean --force
