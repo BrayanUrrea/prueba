@@ -1,9 +1,10 @@
-import { Given, When, Then } from '@cucumber/cucumber'
+import { Given, When, Then, setDefaultTimeout } from '@cucumber/cucumber'
 import { Ensure, equals } from '@serenity-js/assertions'
 
-import { TodoList } from '../../../pages/jasmin/Jasmin-pages.js'
+import  {TodoList}  from '../../../pages/jasmin/Jasmin-pages.js'
+setDefaultTimeout(parseInt(process.env.DEFAULT_TIMEOUT) || 60000);
 
-Given('{actor} ingresa a la pagina web',{timeout: 5 * 5000}, async (actor) => {
+Given('{actor} ingresa a la pagina web', async (actor) => {
     await actor.attemptsTo(
         TodoList.verificarPoliticas(),
     )

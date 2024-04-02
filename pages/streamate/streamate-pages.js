@@ -1,6 +1,6 @@
 import { contain, Ensure, equals, includes, isGreaterThan } from '@serenity-js/assertions'
-import { Check, d, Task, Wait } from '@serenity-js/core'
-import { By, Click, Enter, ExecuteScript, isVisible, Key, Navigate, Page, PageElement, PageElements, Press, Text } from '@serenity-js/web'
+import { Check, d, Task, Wait, Masked  } from '@serenity-js/core'
+import { By, Click, Enter,ExecuteScript, isVisible, Key, Navigate, Page, PageElement, PageElements, Press, Text } from '@serenity-js/web'
 
 export class TodoList {
 
@@ -39,13 +39,13 @@ export class TodoList {
     static datosLogin = () =>
         Task.where(d`#actor ingresa datos solicitados y da click sobre el botón de Entrar`,
             Enter.theValue('Brian').into(this.#user()),
-            Enter.theValue('123456789').into(this.#password()),
+            Enter.theValue(Masked.valueOf('contraseña')).into(this.#password()),
         )
 
     // Private API captures ways to locate interactive elements and data transformation logic.
     // Private API supports the public API and is not used in the test scenario directly.
     static #cookies = () =>
-        PageElement.located(By.css('.RaisedButton-variables-0-2-5.RaisedButton-variables-d0-0-2-17.RaisedButton-primary-0-2-11.RaisedButton-root-0-2-6.RaisedButton-primary-d2-0-2-19.RaisedButton-small-0-2-12.RaisedButton-root-0-2-6.RaisedButton-labelWidth-0-2-7'))
+        PageElement.located(By.xpath('./html/body/div[1]/div/div/div/div[1]/button'))
             .describedAs('Estoy de acuerdo')
 
     static #login = () =>

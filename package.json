@@ -1,5 +1,5 @@
 {
-  "name": "Automatizacion",
+  "name": "automatizacion",
   "type": "module",
   "devDependencies": {
     "@cucumber/cucumber": "^10.3.1",
@@ -26,11 +26,20 @@
     "serenity:report": "serenity-bdd run"
   },
   "dependencies": {
+    "browserify": "^17.0.0",
     "dotenv": "^16.4.5",
     "express": "^4.18.3",
-    "mongodb": "^6.3.0",
+    "faker": "^6.6.6",
+    "module": "^1.2.5",
+    "mongodb": "^6.5.0",
     "mongoose": "^8.2.1",
     "nodemon": "^3.1.0",
-    "type":"module"
-  }
+    "uniq": "^1.0.1"
+  },
+  "description": "Installation\r To use this project, you'll need:",
+  "version": "1.0.0",
+  "main": "wdio.conf.js",
+  "author": "",
+  "license": "ISC",
+  "keywords": []
 }

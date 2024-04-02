@@ -1,7 +1,8 @@
 import { contain, Ensure, equals, includes, isGreaterThan } from '@serenity-js/assertions'
-import { Check, d, Task, Wait } from '@serenity-js/core'
+import { Check, d, Task, Wait, Masked } from '@serenity-js/core'
 import { By, Click, Enter, ExecuteScript, isVisible, Key, Navigate, Page, PageElement, PageElements, Press, Text } from '@serenity-js/web'
-const mostrar = require('../../Aut/connBD')
+
+import { mostrar } from "../../Aut/connBD.js"
 
 
 export class TodoList {
@@ -43,12 +44,11 @@ export class TodoList {
             Enter.theValue(
                 mostrar().then((p) =>{
                     p[0]['user']
-                    console.log(p[0]['password'])
                 })
             ).into(this.#user()),
             Enter.theValue(
-                mostrar().then((p) =>{
-                   p[0]['password']
+                mostrar().then((p) => {
+                    p[0]['password']
                 })
             ).into(this.#password()),
             Click.on(this.#entrar()),
@@ -57,7 +57,7 @@ export class TodoList {
     // Private API captures ways to locate interactive elements and data transformation logic.
     // Private API supports the public API and is not used in the test scenario directly.
     static #cookies = () =>
-        PageElement.located(By.css('.sc-dicizt.eBQMQY.sc-bMOqnl.cMaEDV'))
+        PageElement.located(By.css('.sc-dicizt.eBQMQY.sc-jddSye.igUHNj'))
             .describedAs('Aceptar Cookies')
 
     static #login = () =>

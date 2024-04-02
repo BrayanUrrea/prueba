@@ -148,7 +148,7 @@ export const config = {
         // <string[]> (file/dir) require files before executing features
         import: [
             './features/jasmin/step-definitions/steps.js',
-            './features/xxx/step-definitions/steps.js',
+            './features/streamate/step-definitions/steps.js',
             './features/support/*.js',
         ],
         // <string[]> (type[:path]) specify native Cucumber.js output format, if needed. Optionally supply PATH to redirect formatter output (repeatable)

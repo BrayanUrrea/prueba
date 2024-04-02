@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
+import * as mongoose from "mongoose"
 const { Schema } = mongoose;
-require('dotenv').config()
+import { } from 'dotenv/config'
 
 
 mongoose.connect(process.env.MONGODB_URI, {
@@ -19,12 +19,8 @@ const user = new Schema({
 const usuarios = mongoose.model('usuarios', user);
 
 
-const mostrar = async () => {
+
+export const mostrar = async () => {
     const personas = await usuarios.find()
     return personas;
 }
-
-
-module.exports = mostrar;
-
-
