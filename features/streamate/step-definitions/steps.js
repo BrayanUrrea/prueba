@@ -2,7 +2,7 @@ import { Given, When, Then , setDefaultTimeout } from '@cucumber/cucumber'
 import { Ensure, equals } from '@serenity-js/assertions'
 
 import { TodoList } from '../../../pages/streamate/streamate-pages.js'
-setDefaultTimeout(parseInt(process.env.DEFAULT_TIMEOUT) || 60000);
+// setDefaultTimeout(parseInt(process.env.DEFAULT_TIMEOUT) || 60000);
 
 Given('{actor} ingresa a Streamate', async (actor) => {
     await actor.attemptsTo(

@@ -2,16 +2,10 @@ import * as mongoose from "mongoose"
 const { Schema } = mongoose;
 import { } from 'dotenv/config'
 
-
-// mongoose.connect(process.env.MONGODB_URI, {
-
-// })
-//     .then(() => console.log('CONECTADO A MONGODB'))
-//     .catch((e) => console.log('ERROR' + e))
+const dbUri = "mongodb+srv://mongo-1234:zEj6QmoxzvEFQmgv@cluster0.otxrshk.mongodb.net/registros";
 
 const dbConnect = async () => {
     try {
-        const dbUri = process.env.MONGODB_URI;
 
         console.log(`Connecting DB`);
 
@@ -38,11 +32,8 @@ const usuarios = mongoose.model('usuarios', user);
 
 
 export const mostrar = async () => {
-    try {
-        const personas = await usuarios.find({ user: "bryan" })
-        return personas;
-    } catch (error) {
-        return error;
-    }
-
+    const personas = await usuarios.find({ user: "bryan" })
+    console.log("finByPersona",personas)
+    return personas;
 }
+

@@ -1,11 +1,12 @@
 import { contain, Ensure, equals, includes, isGreaterThan } from '@serenity-js/assertions'
-import { Check, d, Task, Wait, Masked, Debug} from '@serenity-js/core'
+import { Check, d, Task, Wait, Masked, Debug } from '@serenity-js/core'
 import { By, Click, Enter, ExecuteScript, isVisible, Key, Navigate, Page, PageElement, PageElements, Press, Text } from '@serenity-js/web'
 
 import { mostrar } from "../../Aut/connBD.js"
 
 
 export class TodoList {
+
 
     // Public API captures the business domain-focused tasks
     // that an actor interacting with a TodoList app can perform
@@ -42,18 +43,17 @@ export class TodoList {
     static datosLogin = () =>
         Task.where(d`#actor ingresa datos solicitados y da click sobre el botón de Entrar`,
             Enter.theValue(
-                // mostrar().then((p) =>{
-                //     p[0]['password']
-                // }) 
-                mostrar()
+             'brian'
             ).into(this.#user()),
             Enter.theValue(
                 // mostrar().then((p) =>{
                 //     p[0]['password']
                 //  })
+                'contraseña'
             ).into(this.#password()),
             Click.on(this.#entrar()),
         )
+
 
     // Private API captures ways to locate interactive elements and data transformation logic.
     // Private API supports the public API and is not used in the test scenario directly.

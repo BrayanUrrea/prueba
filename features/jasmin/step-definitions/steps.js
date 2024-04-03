@@ -16,7 +16,7 @@ When('{pronoun} da click sobre el botón de ingresar', async (actor) => {
     )
 })
 
-Then('{pronoun} debe ingresar usuario y contraseña', async (actor) => {
+Then('{pronoun} debe ingresar usuario y contraseña',{timeout: 10 * 10000}, async (actor) => {
     await actor.attemptsTo(
         TodoList.datosLogin(),
     )
