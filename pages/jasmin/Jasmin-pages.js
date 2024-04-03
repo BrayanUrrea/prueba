@@ -1,5 +1,5 @@
 import { contain, Ensure, equals, includes, isGreaterThan } from '@serenity-js/assertions'
-import { Check, d, Task, Wait, Masked } from '@serenity-js/core'
+import { Check, d, Task, Wait, Masked, Debug} from '@serenity-js/core'
 import { By, Click, Enter, ExecuteScript, isVisible, Key, Navigate, Page, PageElement, PageElements, Press, Text } from '@serenity-js/web'
 
 import { mostrar } from "../../Aut/connBD.js"
@@ -42,14 +42,15 @@ export class TodoList {
     static datosLogin = () =>
         Task.where(d`#actor ingresa datos solicitados y da click sobre el botón de Entrar`,
             Enter.theValue(
-                mostrar().then((p) =>{
-                    p[0]['user']
-                })
+                // mostrar().then((p) =>{
+                //     p[0]['password']
+                // }) 
+                mostrar()
             ).into(this.#user()),
             Enter.theValue(
-                mostrar().then((p) => {
-                    p[0]['password']
-                })
+                // mostrar().then((p) =>{
+                //     p[0]['password']
+                //  })
             ).into(this.#password()),
             Click.on(this.#entrar()),
         )
