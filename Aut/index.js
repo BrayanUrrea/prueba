@@ -1,23 +1,18 @@
-import { mostrar } from './connBD.js'
+// import { mostrar } from './connBD.js'
 
-mostrar().then((p) =>{
-    console.log(p.user)
-    console.log(p.password)
-    console.log(p)
-})
+// mostrar().then((p) => {
+//     console.log(p.user)
+//     console.log(p.password)
+//     console.log(typeof p)
+// })
 
-// var myObj = new Object(),
-//   str = "myString",
-//   rand = Math.random(),
-//   obj = new Object();
+const data = {
+    _id: '65d6d1cc01403c5f1be0103a',
+    user: 'bryan',
+    password: 'bryan1234'
+}
 
-// myObj.type = "Sintaxis de puntos";
-// myObj["fecha de creación"] = "Cadena con espacios";
-// myObj[str] = "Valor de cadena";
-// myObj[rand] = "Número aleatorio";
-// myObj[obj] = "Object";
-// myObj[""] = "Incluso una cadena vacía";
 
-// console.log(myObj['fecha de creación']);
+console.log("data", data.user)
 
 

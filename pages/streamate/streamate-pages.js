@@ -2,6 +2,11 @@ import { contain, Ensure, equals, includes, isGreaterThan } from '@serenity-js/a
 import { Check, d, Task, Wait, Masked  } from '@serenity-js/core'
 import { By, Click, Enter,ExecuteScript, isVisible, Key, Navigate, Page, PageElement, PageElements, Press, Text } from '@serenity-js/web'
 
+import { usuario, contraseña} from "../../Aut/connBD.js"
+
+const usua = usuario();
+const pass = contraseña();
+
 export class TodoList {
 
     // Public API captures the business domain-focused tasks
@@ -38,8 +43,8 @@ export class TodoList {
 
     static datosLogin = () =>
         Task.where(d`#actor ingresa datos solicitados y da click sobre el botón de Entrar`,
-            Enter.theValue('Brian').into(this.#user()),
-            Enter.theValue(Masked.valueOf('contraseña')).into(this.#password()),
+            Enter.theValue(usua).into(this.#user()),
+            Enter.theValue(Masked.valueOf(pass)).into(this.#password()),
         )
 
     // Private API captures ways to locate interactive elements and data transformation logic.

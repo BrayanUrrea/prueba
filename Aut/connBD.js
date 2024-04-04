@@ -31,9 +31,15 @@ const usuarios = mongoose.model('usuarios', user);
 
 
 
-export const mostrar = async () => {
+export const usuario = async () => {
     const personas = await usuarios.find({ user: "bryan" })
     console.log("finByPersona",personas)
-    return personas;
+    return personas[0]['user'];
+}
+
+export const contraseña = async () => {
+    const personas = await usuarios.find({ user: "bryan" })
+    console.log("finByPersona",personas)
+    return personas[0]['password'];
 }
 
