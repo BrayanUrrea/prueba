@@ -16,30 +16,22 @@ const dbConnect = async () => {
     }
 };
 
-
-
 dbConnect();
-
 
 const user = new Schema({
     user: String,
     password: String
 });
 
-
 const usuarios = mongoose.model('usuarios', user);
-
-
 
 export const usuario = async () => {
     const personas = await usuarios.find({ user: "bryan" })
-    console.log("finByPersona",personas)
     return personas[0]['user'];
 }
 
 export const contraseña = async () => {
     const personas = await usuarios.find({ user: "bryan" })
-    console.log("finByPersona",personas)
     return personas[0]['password'];
 }
 

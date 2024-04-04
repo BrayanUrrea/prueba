@@ -50,7 +50,10 @@ export const config = {
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [{
-         browserName: 'chrome'
+        browserName: 'chrome',
+        "goog:chromeOptions": {
+            args: ['incognito']
+        }
     }],
 
     //
@@ -60,7 +63,7 @@ export const config = {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'info',
+    logLevel: 'silent',
     //
     // Set specific log levels per logger
     // loggers:
@@ -120,11 +123,11 @@ export const config = {
         crew: [
             '@serenity-js/console-reporter',
             '@serenity-js/serenity-bdd',
-            [ '@serenity-js/core:ArtifactArchiver', { outputDirectory: 'target/site/serenity' } ],
-            [ '@serenity-js/web:Photographer',      {
+            ['@serenity-js/core:ArtifactArchiver', { outputDirectory: 'target/site/serenity' }],
+            ['@serenity-js/web:Photographer', {
                 // strategy: 'TakePhotosOfFailures'  // fast execution, screenshots only when tests fail
                 strategy: 'TakePhotosOfInteractions' // slower execution, more comprehensive reports
-            } ],
+            }],
         ]
     },
     //
@@ -152,7 +155,7 @@ export const config = {
             './features/support/*.js',
         ],
         // <string[]> (type[:path]) specify native Cucumber.js output format, if needed. Optionally supply PATH to redirect formatter output (repeatable)
-        format: [ ],
+        format: [],
         // <string> (name) specify the profile to use
         profile: '',
         // <boolean> fail if there are any undefined or pending steps
